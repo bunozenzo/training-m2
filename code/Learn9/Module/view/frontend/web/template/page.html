@@ -1,0 +1,51 @@
+<!--<div class="onestepcheckout-comment">-->
+<!--<textarea col="15" name="billing[onestepcheckout_comment]" id="onestepcheckout_comment"-->
+<!--class="osc-additional-data" data-bind="attr: {placeholder: $t('Leave your comment')}"></textarea>-->
+<!--</div>-->
+<!--<h1 data-bind="text:message"></h1>-->
+<!--<h2 data-bind="text:getTitle()"></h2>-->
+<fieldset class="fieldset">
+    <legend class="legend">Bai tap</legend>
+    <br>
+    <div class="field required">
+        <label for="price" class="label">Gia san pham</label>
+        <div class="control">
+            <input type="text" data-bind="value:price"/>
+        </div>
+    </div>
+    <div class="field required">
+        <label for="qty" class="label">So luong</label>
+        <div class="control">
+            <input tepe="text" data-bind="value:qty">
+        </div>
+    </div>
+</fieldset>
+<div class="actions-toolbar">
+    <div class="primary">
+        <label class="label">Thanh tien</label>
+        <span data-bind="text:total"></span>
+    </div>
+</div>
+<div class="">
+    <button data-bind="click: ClickCounter">Click</button>
+</div>
+<!--<div class="row"  data-bind="foreach: { data:products , as:'product' }">-->
+    <!--<div class="col-sm-6 col-md-3">-->
+        <!--<a class="thumbnail" data-bind="attr: {href: product.url}">-->
+            <!--<img data-bind="attr:">-->
+        <!--</a>-->
+    <!--</div>-->
+<!--</div>-->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    <tbody data-bind="foreach: { data:products , as:'product' }">
+    <tr>
+        <td data-bind="text: name"></td>
+        <td data-bind="text: price"></td>
+    </tr>
+    </tbody>
+
+</table>

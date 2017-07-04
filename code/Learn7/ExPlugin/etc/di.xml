@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--<type name="\Magento\Checkout\Controller\Cart\Add">-->
+    <!--<plugin name="Learn7_ExPlugin::Cart_Redirect" type="Learn7\ExPlugin\Plugin\Cart" sortOrder="1" />-->
+    <!--</type>-->
+    <!--<type name="Magento\Checkout\Block\Cart\Item\Renderer">-->
+    <!--<plugin name="Learn7_ExPlugin::Cart_Image_Changer" type="Learn7\ExPlugin\Plugin\Img" sortOrder="1" />-->
+    <!--</type>-->
+    <!--<type name="Magento\Checkout\CustomerData\AbstractItem">-->
+        <!--<plugin name="Change_Product_Image_In_Minicart" type="Learn7\ExPlugin\Plugin\Minicart\Image" sortOrder="1"/>-->
+    <!--</type>-->
+    <preference for="\Magento\Checkout\Controller\Cart\Add" type="Learn7\ExPlugin\Rewrite\Cart" />
+    <preference for="Magento\Checkout\CustomerData\AbstractItem" type="Learn7\ExPlugin\Rewrite\Img" />
+</config>

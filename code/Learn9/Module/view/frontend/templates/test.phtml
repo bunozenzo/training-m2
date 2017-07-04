@@ -1,0 +1,20 @@
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "example-scope": {
+                    "component": "Learn9_Module/js/demo",
+                    "exampleMessage": "<?= __('Hello Magento Stack Exchange!') ?>"
+                }
+            }
+        }
+    }
+}
+</script>
+
+<div data-bind="scope: 'example-scope'">
+    <h2 data-bind="text: message"></h2>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<div class="demo"></div>

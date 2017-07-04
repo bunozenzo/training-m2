@@ -1,0 +1,48 @@
+<form class="form" id="custom-form" method="post" autocomplete="off">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php echo __('Login') ?></span></legend>
+        <br>
+        <div class="field required">
+            <label for="email_address" class="label"><span><?php echo __('Email') ?></span></label>
+            <div class="control">
+                <input type="email" name="username" id="email_address_login" value="" title="<?php echo __('Email') ?>"
+                       class="input-text" data-validate="{required:true, 'validate-email':true}">
+            </div>
+        </div>
+        <div class="field required">
+            <label for="password" class="label"><span><?php echo __('Password') ?></span></label>
+            <div class="control">
+                <input type="password" name="password" id="password_login" value="" title="<?php echo __('Password') ?>"
+                       class="input-text" data-validate="{required:true, 'validate-password':true}">
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="button" id="test1" class="action submit primary" title="<?php echo __('Submit') ?>">
+                <span><?php echo __('Submit') ?></span></button>
+        </div>
+    </div>
+</form>
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'Learn9_Module/js/test'
+    ], function ($) {
+        var dataForm = $('#custom-form');
+        dataForm.mage('validation', {});
+        $('#test1').on('click',function () {
+            if(dataForm.validation('isValid')){
+//                var username = $('#email_address_login').val();
+//                var password = $('#password_login').val();
+                var ajaxurl = '<?php echo $block->getAjaxUrl() ?>';
+                $(this).test({
+//                    username:username,
+//                    password:password,
+                    ajaxurl:ajaxurl
+                });
+            }
+        })
+    });
+</script>
